@@ -9,8 +9,11 @@ def main():
 
     season_shots = shots.loc[shots["season"] == season]
 
-    # TODO 2: Filter season_shots to keep only three-point attempts.
-    # Hint: the shot_type value is "3PT Field Goal".
+    # TODO 2: Use .loc to keep only three-point attempts.
+    # Start with season_shots.loc[...].
+    # Inside the brackets, write a condition that checks whether
+    # season_shots["shot_type"] equals "3PT Field Goal".
+    # Use == to compare the values.
     three_point_shots = season_shots  # Replace this line.
 
     attempts = len(three_point_shots)
@@ -20,18 +23,22 @@ def main():
         print("No matching attempts. Check your season and filter.")
         return
 
-    # TODO 3: Calculate shooting percentage.
-    # Formula: makes divided by attempts, multiplied by 100.
-    shooting_pct = None  # Replace None with your calculation.
+    # TODO 3: Replace None with the shooting-percentage calculation.
+    # Divide makes by attempts, then multiply by 100.
+    # Use the variables already calculated above.
+    shooting_pct = None
 
     print(f"Season: {season}")
-    print(f"Selected attempts: {attempts:,}")
-    print(f"Selected makes: {makes:,}")
 
     if shooting_pct is None:
-        print("Complete TODO 3 to display shooting percentage.")
+        print(f"Selected attempts: {attempts:,}")
+        print(f"Selected makes: {makes:,}")
+        print("Complete TODOs 2 and 3 to calculate three-point accuracy.")
     else:
-        print(f"Shooting percentage: {shooting_pct:.2f}%")
+        print("Shot selection: Regulation-time three-pointers")
+        print(f"Three-point attempts: {attempts:,}")
+        print(f"Three-pointers made: {makes:,}")
+        print(f"Three-point shooting percentage: {shooting_pct:.2f}%")
 
 
 if __name__ == "__main__":
